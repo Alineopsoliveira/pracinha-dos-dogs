@@ -166,6 +166,13 @@
   p, a{
     font-size: 0.9375rem;
   }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+  }
   .btn {
     display: inline-block;
     background-color: var(--lightBlue);
