@@ -13,11 +13,17 @@
   }
   * {
     box-sizing: border-box;
+    margin: 0;
+   
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    line-height: 1.6;
+    color: var(--dark);
     background-color: #fff;
    
   }
@@ -40,22 +46,7 @@
     
     
   }
-  
-  .banner {
-    width: 100%;
-    margin-top: 16%;
-   
-  }
-  .banner img{
-    width: 100%;
-    object-fit: cover;
-   
-  }
-  .main-nav {
-    display: none;
-  }
-  
-  
+
   .menu-icon {
     font-size: 1.5rem;
     background: none;
@@ -63,18 +54,23 @@
     color: white;
     cursor: pointer;
   }
-  
+
   header h1 {
     font-size: 1.2rem;
     margin-right: auto;
     justify-content: center;
     text-align: center;
   }
+
+  .main-nav {
+    display: none;
+  }
+  
   .sidebar {
     position: fixed;
     top: 0;
     left: -260px;
-    width: 240px;
+    width: 200px;
     height: 100%;
     background-color: var(--lightBlue);
     padding-top: 20%;
@@ -94,45 +90,44 @@
   }
   
   .menu a {
-    color: var(--dark);
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
   }
   
   .menu a:hover {
-    color: var(--secondary);
+    color: var(--customBlue);
   }
 
- 
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  
+  .banner {
+    width: 100%;
+    margin-top: 16%;
+   
+  }
+  .banner img{
+    width: 100%;
+    object-fit: cover;
+    max-height: 400px;
+    border-bottom: 4px solid var(--lightBlue);
+   
   }
   
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-  }
-  
-.content {
- display: flex;
- flex-direction: column;
- align-items: center;
- margin-top: 1rem;
- 
- 
-}
   nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
   }
   
+.content {
+ display: flex;
+ flex-direction: column;
+ align-items :flex-start;
+ margin-top: 1rem;
+ 
+ 
+}
+   
   section {
     display: flex;
     flex-direction: column;
@@ -153,7 +148,8 @@
 
    #sobre img,  #modalidades img, #regras img, #informacoes img, #programacao img{
     width: 90%;
-    height: 80%;
+    height: auto;
+    margin-top: 1rem; 
    border-radius: 1rem;
     object-fit: cover;
    }
@@ -164,14 +160,18 @@
     align-items: center;
    } 
   
-    #informacoes p{
+    #informacoes p, #informacoes ul {
     text-align: center;
    } 
 
-   #informacoes ul, h3{
-    margin: 0;
-   } 
+   #informacoes h3 {
+    margin-top: 1rem;
+  }
  
+  #programacao ul {
+    list-style-type: none;
+    padding: 0;
+  }
   h2{
     background-color: var(--lightBlue);
     border-radius: 8px;
@@ -181,6 +181,7 @@
     color: var(--customBlue);
     font-size: 1.5rem;
     justify-content: center;
+    margin-bottom: 1rem;
   }
   p, a{
     font-size: 0.9375rem;
@@ -219,21 +220,40 @@
     z-index: 999 */
   }
   footer img {
-    width: 50%;
-    height: 50%;
+    width: 20%;
+    height: 20%;
     
   }
   @media (min-width: 1200px) {
 
-   
+    .site-header {
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+  
+    header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .main-nav {
+      display: flex;
+      gap: 2rem;
+    }
+  
   
     .menu-icon {
       display: none;
     }
   
-    .main-nav {
-      display: flex;
-      gap: 20px;
+    .banner {
+      width: 100%;
+     margin-top: 4%;
+     
+    }
+    .banner img{
+     max-height: 700px;
+      object-fit: cover;
+     
     }
   
     .sidebar {
@@ -253,23 +273,55 @@
     header nav a:hover {
       text-decoration: underline;
       text-decoration-color: var(--lightBlue);
-      text-decoration-thickness: 10px;
+      text-decoration-thickness: 2px;
     }
-    .content {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 20px;
-      
-    }
-    section h2{
-      font-size: 2.25rem;
-    }
-     p , a{
-      font-size: 1rem;
-    }
-    section li {
-      font-size: 1rem;
-    }
+ 
+   
+  section {
+    width: 100%;
+    padding: 2rem;
+   
+   
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    
+  }
+
+  section h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  section ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  #informacoes p,
+  #informacoes ul {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    padding: 14px 24px;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+
+  footer img {
+    width: 80px;
+  }
   }
